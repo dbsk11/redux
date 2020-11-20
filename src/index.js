@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+
+// REDUX
+import { createStore } from 'redux'
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>
