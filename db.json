@@ -1,0 +1,19 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "title": "Grocery Shopping",
+      "description": "Pick up Thanksgiving Dinner ingredients"
+    },
+    {
+      "id": 2,
+      "title": "Clean Room",
+      "description": "Swiffer & do laundry"
+    },
+    {
+      "id": 1,
+      "title": "Thanksgiving Prep",
+      "description": "Take out Thanksgiving decorations"
+    }
+  ]
+}

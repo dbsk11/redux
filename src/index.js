@@ -4,13 +4,35 @@ import App from './App';
 
 // REDUX
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+let listInitialState = {
+  list: []
+}
+
+// The return value of reducer becomes our global state!!! Doesn't get merged to global state, it becomes the global state (ie: setState)
+const listReducer = (state = listInitialState, action) => {
+  switch(action.type){
+    case "SET_LIST":
+      return {
+        ...state,
+        list: action.payload
+      }
+    default: 
+      return state
+  }
+}
+
+let theListObject = createStore(
+  listReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 
-
-
+// BrowserRouter can be used as well either within Provider or outside Provider (ORDER DOES NOT MATTER)
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={theListObject}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
