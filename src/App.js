@@ -29,7 +29,7 @@ class App extends React.Component{
 // ACTION: POJO that contains the key of type && payload
 let setAllList = (listArr) => {
   return {
-    type: "SET_LIST",
+    type: "SET_ALL_LIST",
     payload: listArr
   };
 };
@@ -39,4 +39,4 @@ let mapDispatchToProps = {
   setAllList: setAllList
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

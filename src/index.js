@@ -13,7 +13,7 @@ let listInitialState = {
 // The return value of reducer becomes our global state!!! Doesn't get merged to global state, it becomes the global state (ie: setState)
 const listReducer = (state = listInitialState, action) => {
   switch(action.type){
-    case "SET_LIST":
+    case "SET_ALL_LIST":
       return {
         ...state,
         list: action.payload
