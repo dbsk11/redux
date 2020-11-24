@@ -1,30 +1,33 @@
-import React { useState } from 'react'
+import React from 'react';
 
-const ListForm = () => {
-
-  const [title, setTitle] = useState();
-  const [description, setDescription] = useState();
-
-  const onChangeTitle = (e) => {
-    setTitle(e.target.value)
-  };
-
-  const onChangeDescription = (e) => {
-    setDescription(e.target.value)
+class ListForm extends React.Component{
+  state={
+    title: "",
+    description: ""
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  handleChange = (e) => {
+    let {name, value} = e.target
+    this.setState({
+      [name]: value
+    })
   };
 
-  return(
-    <form onSubmit={handleSubmit}>
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.handleSubmit(this.state)
+  };
+
+  render(){
+    let {title, description} = this.state
+    return(
+      <form onSubmit={this.handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input 
           type="text" 
           value={title}
           name="title"
-          onChange={handleChangeTitle}
+          onChange={this.handleChange}
           id="title"
           autoComplete="off"
         />
@@ -34,64 +37,16 @@ const ListForm = () => {
           type="text"
           value={description}
           name="description"
-          onChange={handleChangeDescription}
+          onChange={this.handleChange}
           id="description"
           autoComplete="off"
         />
         <br />
         <input type="Submit" value={"Dispatch this task"} />
       </form>
-  )
+    )
+  }
+
 };
 
 export default ListForm
-
-
-// class ListForm extends React.Component{
-//   state={
-//     title: "",
-//     description: ""
-//   }
-
-//   onChange = (e) => {
-//     this.setState({
-//       [e.target.name]: e.target.value
-//     });
-//   };
-
-//   handleSubmit = (e) => {
-//     e.preventDefault()
-//   };
-
-//   render(){
-//     let {title, description} = this.state
-//     return(
-//       <form onSubmit={this.handleSubmit}>
-//         <label htmlFor="title">Title:</label>
-//         <input 
-//           type="text" 
-//           value={title}
-//           name="title"
-//           onChange={this.handleChange}
-//           id="title"
-//           autoComplete="off"
-//         />
-//         <br />
-//         <label htmlFor="description">Description:</label>
-//         <input 
-//           type="text"
-//           value={description}
-//           name="description"
-//           onChange={this.handleChange}
-//           id="description"
-//           autoComplete="off"
-//         />
-//         <br />
-//         <input type="Submit" value={"Dispatch this task"} />
-//       </form>
-//     )
-//   }
-
-// };
-
-// export default ListForm
