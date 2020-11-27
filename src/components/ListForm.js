@@ -42,7 +42,7 @@ class ListForm extends React.Component{
           autoComplete="off"
         />
         <br />
-        <input type="Submit" value={"Dispatch this task"} />
+        <input type="Submit" value={"Submit"} />
       </form>
     )
   }

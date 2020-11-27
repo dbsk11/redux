@@ -39,4 +39,4 @@ let mapDispatchToProps = {
   setAllList: setAllList
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
