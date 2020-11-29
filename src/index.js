@@ -5,6 +5,7 @@ import App from './App';
 // REDUX
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+import {combineReducers} from 'redux'
 
 let listInitialState = {
   list: []

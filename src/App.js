@@ -24,7 +24,6 @@ class App extends React.Component{
   };
 };
 
-
 // ACTION CREATOR - return value of an action creator is an action
 // ACTION: POJO that contains the key of type && payload
 let setAllList = (listArr) => {
