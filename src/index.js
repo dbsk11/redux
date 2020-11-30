@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
+import { BrowserRouter } from 'react-router-dom';
 // REDUX
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import {combineReducers} from 'redux'
 
 let listInitialState = {
   list: []
@@ -32,8 +32,10 @@ let theListObject = createStore(
 
 // BrowserRouter can be used as well either within Provider or outside Provider (ORDER DOES NOT MATTER)
 ReactDOM.render(
-  <Provider store={theListObject}>
-    <App />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={theListObject}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
